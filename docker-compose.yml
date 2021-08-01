@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  postgres:
+    build: postgres/
+    ports: ["8001:5432"]
+    
+  node:
+    build: node/
+    ports: ["8080:8080"]
+    volumes:
+      - ./node:/usr/src/app

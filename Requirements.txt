@@ -1,0 +1,51 @@
+You will need to create a service that handles a lottery system
+
+Requirements are:
+- The service will allow anyone to register as a lottery participant.
+- Lottery participants will be able to submit as many lottery ballots for any lottery that isn’t yet finished.
+- Each day at midnight the lottery event will be considered closed and a random lottery winner will be selected from all participants for the day.
+- All users will be able to check the winning ballot for any specific date.
+- The service will have to persist the data regarding the lottery.
+
+Be creative and do not limit yourself by those requirements: use this exercise to show us what you can do best and what you are passionate about. Let us know if the requirements are not clear or if you have any questions.
+
+DB Model:
+	User:
+	-Id
+	-Name
+	-mail?
+	
+	Ballot:
+	-Id
+	-Winner (bool)
+	-fk_user
+	-fk_lottery	
+	
+	Lottery:
+	-Id
+	-Date
+	-fk_winner?
+	
+Architecture:
+	Docker:
+	-Container 1: PostgreSQL
+	-Container 2: API (Node)
+	-Container 3: Frontend
+	
+API Methods:
+	 - Register
+	 - Login
+	 - Logout
+	 - GetBallots
+	 - CheckWinner
+	 
+Server Methods:
+	 - CreateUser
+	 - CheckUser
+	 - CreateBallotForUser
+	 - GetWinnerByDate
+	 - DrawLottery
+	 
+TODO:
+	Change connection between containers - DONE
+	Check how to login through a node API

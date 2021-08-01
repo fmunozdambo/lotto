@@ -1,0 +1,17 @@
+{
+  "name": "lotto",
+  "version": "1.0.0",
+  "description": "First version of the lotto code challenge for Bynder",
+  "main": "server.js",
+  "author": "F. Munoz",
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node": "^16.6.0",
+    "node-postgres": "^0.6.2",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1"
+  }
+}
