@@ -2,7 +2,7 @@
   "name": "lotto",
   "version": "1.0.0",
   "description": "First version of the lotto code challenge for Bynder",
-  "main": "server.js",
+  "main": "app.js",
   "author": "F. Munoz",
   "scripts": {},
   "license": "MIT",

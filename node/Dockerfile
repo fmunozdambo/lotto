@@ -9,10 +9,10 @@ ENV PGDATABASE=LottoBynder
 ENV PGPORT=5432
 #
 COPY package*.json ./
-RUN npm install
 COPY . .
+RUN npm install
 RUN npm install -g nodemon
 RUN npm install -g pg
 EXPOSE 8080
-CMD [ "nodemon","server.js" ]
-#CMD [ "node", "server.js" ]
+CMD [ "nodemon","app.js" ]
+#CMD [ "node", "app.js" ]

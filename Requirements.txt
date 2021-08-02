@@ -24,7 +24,6 @@ DB Model:
 	Lottery:
 	-Id
 	-Date
-	-fk_winner?
 	
 Architecture:
 	Docker:
