@@ -39,8 +39,8 @@ API Methods:
 	 - CheckWinner
 	 
 Server Methods:
-	 - CreateUser
-	 - CheckUser
+	 - CreateUser OK
+	 - CheckUser OK 
 	 - CreateBallotForUser
 	 - GetWinnerByDate
 	 - DrawLottery
@@ -48,3 +48,4 @@ Server Methods:
 TODO:
 	Change connection between containers - DONE
 	Check how to login through a node API
+	Check how to secure password throug a node API

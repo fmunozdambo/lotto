@@ -13,6 +13,7 @@ COPY . .
 RUN npm install
 RUN npm install -g nodemon
 RUN npm install -g pg
+RUN npm i --save-dev @types/node
 EXPOSE 8080
 CMD [ "nodemon","app.js" ]
 #CMD [ "node", "app.js" ]
