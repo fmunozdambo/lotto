@@ -1,7 +1,7 @@
 function Ballot(winner, user, lottery){
     this.winner = winner
-    this.fk_user = user.id
-    this.fk_lottery = lottery.id
+    this.fk_user = user
+    this.fk_lottery = lottery
 }
 
 module.exports = {

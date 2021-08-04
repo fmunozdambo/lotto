@@ -4,9 +4,9 @@ SET client_encoding = 'LATIN1';
 
 CREATE TABLE users (
     id integer GENERATED ALWAYS AS IDENTITY,
-    name character(30) NOT NULL,
-    mail character(30) NOT NULL,
-    password character(200) NOT NULL
+    name varchar(30) NOT NULL,
+    mail varchar(30) NOT NULL,
+    password varchar(200) NOT NULL
 );
 
 CREATE TABLE ballot (

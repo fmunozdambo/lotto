@@ -32,20 +32,20 @@ Architecture:
 	-Container 3: Frontend
 	
 API Methods:
-	 - Register
-	 - Login
+	 - Register OK
+	 - Login kindaOK
 	 - Logout
-	 - GetBallots
-	 - CheckWinner
+	 - GetBallots OK
+	 - CheckWinner OK
 	 
 Server Methods:
-	 - CreateUser OK
-	 - CheckUser OK 
-	 - CreateBallotForUser
-	 - GetWinnerByDate
 	 - DrawLottery
 	 
 TODO:
+	Fix npm install
 	Change connection between containers - DONE
 	Check how to login through a node API
 	Check how to secure password throug a node API
+	Might move the SQL queries to another service or a data access layer not created yet
+	Might change the services distribution by model and how they are called
+	Might want to create n ballots in one call

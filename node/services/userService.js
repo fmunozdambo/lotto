@@ -7,17 +7,17 @@ function create(user) {
 }
 
 async function check(name, password){
-    let query = "SELECT COUNT(1) FROM users WHERE users.name = $1 AND users.password = $2";
+    let query = "SELECT id FROM users WHERE users.name = $1 AND users.password = $2 LIMIT 1";
     let values = [name, password];
     return db.pool.query(query, values);
 }
 
 async function getByName(name){
-    let query = "SELECT * FROM users WHERE users.name = $1 LIMIT 1";
-    let values = [name];
+    let query = "SELECT * FROM users WHERE users.name = $1 LIMIT 1"
+    let values = [name]
     return db.pool.query(query, values);
-}
-
+} 
+ 
 module.exports.create = create
 module.exports.check = check
 module.exports.getByName = getByName
