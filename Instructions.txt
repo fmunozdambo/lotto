@@ -1,0 +1,35 @@
+-----------
+DESCRIPTION
+-----------
+
+This app is divided into 3 docker containers:
+    - Database: A postgresql database that creates the architecture necessary to make the app work:
+        - User: basic user model which works with an encrypted at the backend password
+        - Lottery: model that contains the date of each lottery
+        - Ballot: model that has the information of who owns each ballot, which lottery does it refer to and wether it is a winner
+    - Backend: A node-express server that has 2 functions:
+        - Execute at midnight the necessary instructions (draws a winner for yesterday's lottery and creates the new lottery)
+        - Manage the API which has 4 endpoints:
+            - User:
+                - POST /users : registers a  User(name, mail, password)
+                - GET /users/:id : retrieves a User information -> requires being authenticated
+            - Lottery
+                - GET /lottery/:date : retrieves the winner of that lottery -> requires being authenticated
+            - Ballot
+                - POST /ballot/ : creates n ballots, requires n and Ballot(winner, user(id), lottery(id)) -> requires being authenticated
+            - Authorization
+                - POST /auth : checks if the login is valid, requires a mail and a password
+    - Frontend: CURRENTLY NOT WORKING. An angular SPA which should serve as a test to showcase this app, it has a login and register function and should have a home page
+        that lets the users "buy" ballots (they are free) and check the winner of a certain lottery. Might also have a profile section where one could reach 
+        its own information, change it and see the ballot purchases history.
+
+-----------
+HOW TO USE
+-----------
+Running the command 'docker-compose up' at root should be enough to deploy the 3 containers and get them working
+
+-----------
+REQUIREMENTS
+-----------
+The only real requirement, besides having an internet connection, is to have docker and docker-compose installed
+It should work only with that

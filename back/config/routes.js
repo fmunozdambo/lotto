@@ -16,7 +16,7 @@ router.post('/users', [
     userService.register
 ]);
 router.get('/users/:id', [
-    // authService.validJWTNeeded,
+    authService.validJWTNeeded,
     userService.getUser
 ]);
 
