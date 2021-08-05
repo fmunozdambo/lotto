@@ -1,5 +1,9 @@
 const db = require("../config/db_connection")
 
+function Lottery(date){
+    this.date = date
+}
+
 function create(lottery) {
     let query = "INSERT INTO lottery (date) VALUES ($1) RETURNING id"
     let values = [lottery.date]
@@ -24,8 +28,9 @@ function getWinnerByDate(date){
     return db.pool.query(query, values)
 }
 
-
-
+module.exports = {
+    Lottery: Lottery
+}
 module.exports.create = create
 module.exports.getByDate = getByDate
 module.exports.getWinnerByDate = getWinnerByDate
