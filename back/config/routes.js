@@ -5,17 +5,18 @@ const userService = require('../services/userService');
 const lotteryService = require('../services/lotteryService');
 const ballotService = require('../services/ballotService');
 const authService = require('../services/authorizationService');
+const cors = require('cors');
 
 const router = express.Router();
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
+
+router.all('*', cors());
 
 // Users endpoint
 router.post('/users', [
     userService.register
 ]);
 router.get('/users/:id', [
-    authService.validJWTNeeded,
+    // authService.validJWTNeeded,
     userService.getUser
 ]);
 

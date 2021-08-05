@@ -12,8 +12,8 @@ services:
     depends_on:
       - "db"
    
-  front:
-    build: front/
-    ports: ["80:80"]
-    depends_on:
-      - "back"
+  # front:
+  #   build: front/
+  #   ports: ["80:80"]
+  #   depends_on:
+  #     - "back"

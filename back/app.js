@@ -9,10 +9,12 @@ const routes = require("./config/routes");
 const automaticService = require('./services/automaticService');
 
 const app = express();
+const cors = require('cors');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 app.use(routes)
+
+// use it before all route definitions
+app.use(cors());
 
 app.listen(8080, () => {
     console.log("App listening on port 8080");

@@ -31,7 +31,6 @@ exports.check = (request, response, next) => {
 exports.login = (request, response) => {
     try {
         let refreshId = request.body.id + "not so secret";
-        console.log(refreshId)
         let salt = crypto.randomBytes(16).toString('base64');
         let hash = crypto.createHmac('sha512', salt).update(refreshId).digest("base64");
         request.body.refreshKey = salt;

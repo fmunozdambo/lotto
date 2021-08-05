@@ -33,7 +33,7 @@ Architecture:
 	
 API Methods:
 	 - Register OK
-	 - Login kindaOK
+	 - Login OK
 	 - Logout
 	 - GetBallots OK
 	 - CheckWinner OK
