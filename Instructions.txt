@@ -10,7 +10,7 @@ This app is divided into 3 docker containers:
     - Backend: A node-express server that has 2 functions:
         - Execute at midnight the necessary instructions (draws a winner for yesterday's lottery and creates the new lottery)
         - Manage the API which has 4 endpoints:
-            - User:
+            - User: 
                 - POST /users : registers a  User(name, mail, password)
                 - GET /users/:id : retrieves a User information -> requires being authenticated
             - Lottery
