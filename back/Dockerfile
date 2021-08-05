@@ -1,5 +1,5 @@
 #Node Image
-FROM node:14
+FROM node:14.15.0
 #Variables to connect with the db
 ENV PGUSER=postgres
 ENV PGHOST=db
@@ -19,4 +19,4 @@ COPY . .
 WORKDIR /usr/src/app
 EXPOSE 8080
 CMD [ "nodemon","app.js" ]
-#CMD [ "node", "app.js" ]
+# CMD [ "node", "app.js" ]

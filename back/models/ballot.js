@@ -18,7 +18,25 @@ function createSeveral(ballot, n) {
     return db.pool.query(query, values);
 }
 
+function getAllByDate(date){
+    let query = `select b.id from ballot b \
+    left join lottery l \
+    on b.fk_lottery = l.id \
+    where l.date = $1`;
+    let values = [date];
+    return db.pool.query(query, values);
+}
+
+function setWinner(id){
+    let query = "UPDATE ballot SET winner = true WHERE id = $1";
+    let values = [id];
+    return db.pool.query(query, values);
+}
+
 module.exports = {
     Ballot: Ballot
 }
 module.exports.create = create
+module.exports.createSeveral = createSeveral
+module.exports.getAllByDate = getAllByDate
+module.exports.setWinner = setWinner

@@ -29,7 +29,7 @@ Architecture:
 	Docker:
 	-Container 1: PostgreSQL
 	-Container 2: API (Node)
-	-Container 3: Frontend
+	-Container 3: Frontend , Angular
 	
 API Methods:
 	 - Register OK
@@ -39,14 +39,12 @@ API Methods:
 	 - CheckWinner OK
 	 
 Server Methods:
-	 - DrawLottery
+	 - DrawLottery OK
 	 
 TODO:
 	Fix npm install - DONE
 	Change connection between containers - DONE
-	Check how to login through a node API
-	Check how to secure password throug a node API
-	Might move the SQL queries to another service or a data access layer not created yet
-	Might change the services distribution by model and how they are called
 	Might want to create n ballots in one call - DONE
 	Generate JWT secret
+	Fix inconsistency when starting the containers
+

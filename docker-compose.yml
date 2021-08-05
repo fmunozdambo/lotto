@@ -8,10 +8,12 @@ services:
     build: back/
     ports: ["8080:8080"]
     volumes:
-      - ./node:/usr/src/app
+      - ./back:/usr/src/app
     depends_on:
       - "db"
    
   front:
     build: front/
     ports: ["80:80"]
+    depends_on:
+      - "back"

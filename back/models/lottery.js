@@ -28,6 +28,18 @@ function getWinnerByDate(date){
     return db.pool.query(query, values)
 }
 
+function get(date){
+    let query = `select u.name from users u \
+    left outer join ballot b \
+    on b.fk_user = u.id \
+    inner join lottery l \
+    on b.fk_lottery = l.id \
+    where b.winner = true \
+    and l."date" = $1 `
+    let values = [date]
+    return db.pool.query(query, values)
+}
+
 module.exports = {
     Lottery: Lottery
 }
